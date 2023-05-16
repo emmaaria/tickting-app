@@ -1,0 +1,27 @@
+@import "bootstrap";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+.actions a {
+    opacity: 0.3;
+}
+
+.actions a:hover {
+    opacity: 1;
+}
+
+.data-column {
+    margin-top: 0.25rem;
+}
+
+.weekly-working-hours {
+    margin-top: 1rem;
+}
+
+.weekday-label {
+    margin-left: 10rem;
+    width: 12rem;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
