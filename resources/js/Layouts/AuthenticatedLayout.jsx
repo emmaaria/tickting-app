@@ -27,6 +27,9 @@ export default function Authenticated({ user, header, children }) {
                                 <NavLink href={route('users')} active={route().current('users')}>
                                     Users
                                 </NavLink>
+                                <NavLink href={route('departments')} active={route().current('departments') || route().current('departments.create')}>
+                                    Departments
+                                </NavLink>
                             </div>
                         </div>
 
@@ -39,7 +42,7 @@ export default function Authenticated({ user, header, children }) {
                                                 type="button"
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                {user.name}
+                                                {user.username}
 
                                                 <svg
                                                     className="ml-2 -mr-0.5 h-4 w-4"

@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = DB::table('users')->whereNot('id', Auth::id())->paginate(1);
+        $users = DB::table('users')->whereNot('id', Auth::id())->paginate(50);
         return Inertia::render(
             'User/UserList',
             [
