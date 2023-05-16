@@ -16,7 +16,15 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/migrate', function () {
+    $output = [];
+    Artisan::call('migrate', $output);
+    dd(Artisan::output());
+});
+Route::get('/pull', function () {
+    $output = exec('git pull 2>&1', $output, $return_var);
+    dd($output);
+});
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -37,4 +45,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
